@@ -7,7 +7,7 @@
     <title>Document</title>
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="img/footer_logo.png">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -42,7 +42,7 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-lg-7">
+                            <!-- <div class="col-xl-6 col-lg-7">
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
@@ -66,14 +66,14 @@
                                         </ul>
                                     </nav>
                                 </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            </div> -->
+                            <!-- <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                                 <div class="Appointment">
                                     <div class="book_btn d-none d-lg-block">
                                         <a href="#">Sign In</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="col-12">
                                 <div class="mobile_menu d-block d-lg-none"></div>
                             </div>
@@ -85,6 +85,7 @@
         </div>
     </header>
     <!-- header-end -->
+   
 @yield('content');
 </body>
 </html>

@@ -1,3 +1,7 @@
+@extends('master')
+
+@section('content2')
+
     <!-- header-start -->
     <header>
         <div class="header-area ">
@@ -55,3 +59,5 @@
         </div>
     </header>
     <!-- header-end -->
+
+@endsection

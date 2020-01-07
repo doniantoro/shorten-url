@@ -26,23 +26,29 @@ class shorten extends Controller
 
     public function input_link(Request $request)
     {
-        $data_link = new data_link;
-        $data_link->link = $request->link;
-        $data_link->code=$request->code;
-        $data_link->save();
-        $s=$data_link->id;
-        $link=data_link::where('id',$s)->first();
-
-        return redirect('http://test.test/')->with(['success' => $link->code]);
+        $data_link= data_link::get();
+        $same=true;
+        $succes="";
+        $failed="";
+        foreach($data_link as $data)
+        {
+            if($request->code == $data->code){
+                $same=false;
+                $failed="Sorry,domain ".$request->code." has already used ,please type another domain";
+            }
+        }
+        if($same==true){
+            $data_link = new data_link;
+            $data_link->link = $request->link;
+            $data_link->code=$request->code;
+            $data_link->save();
+            $s=$data_link->id;
+            $link=data_link::where('id',$s)->first();
+            $succes =$link->code;
+        }
+       
+        
+       return redirect('/')->with(['success' => $succes,'failed'=>$failed]);
     }
-
-// public function index2()
-// {
-//    return view('pesan')->with(['success' => 'Pesan Berhasil']);
-// }
-// public function pesan()
-// {
-//    return redirect('http://test.test/')->with(['success' => 'Pesan Berhasil']);
-// }
 
 }

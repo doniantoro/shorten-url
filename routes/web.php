@@ -15,13 +15,13 @@
 //     return view('welcome');
 // });
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Auth::routes();
+Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/','shorten@index')->name('kepo');
 Route::get('/input_link','shorten@input_link');

@@ -6,13 +6,13 @@
 
     <!-- slider_area_start -->
     <div class="slider_area">
-        <div class="single_slider  d-flex align-items-center slider_bg_1">
+        <div class="single_slider  d-flex align-items-center slider_bg_1" style="height:700px;"> 
             <div class="container">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-10">
                         <div class="slider_text text-center justify-content-center">
-                            <p>Find Nearby Attraction</p>
-                            <h3>Find Nearby Attraction</h3>
+                            <p>Short Your Link</p>
+                            <h3 style="font-size:58px;">Grow Your Brand With shortest link</h3>
                             <div class="search_form"> 
                                 <form  method="get" action="input_link">
                                     <div class="row align-items-center">
@@ -33,11 +33,16 @@
                                         </div>
                                     </div>
                                 </form>
-                                @if ($message = Session::get('success'))
-                                      <div class="alert alert-success alert-block">
+                                @if ($success = Session::get('success'))
+                                      <div class="alert alert-success ">
                                         <button type="button" class="close" data-dismiss="alert">×</button> 
-                                        <h3> ini</h3>
-                                
+                                            <h4 style="font-size:30px;  font-family:"Shadows Into Light", cursive;"><a href="{{route ('kepo')}}/{{$success}}">{{route ('kepo')}}/{{$success}}</a></h4>
+                                      </div>
+                                @endif
+                                @if ($failed = Session::get('failed'))
+                                      <div class="alert alert-success ">
+                                        <button type="button" class="close" data-dismiss="alert">×</button> 
+                                            <h4 style="font-size:30px;  font-family:"Shadows Into Light", cursive;">{{$failed}}</h4>
                                       </div>
                                 @endif
 
@@ -48,8 +53,6 @@
             </div>
         </div>
     </div>
-    <div class="tampildata">
-    </div>    
     	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
